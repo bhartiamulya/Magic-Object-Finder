@@ -1,0 +1,306 @@
+.result-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.2);
+  margin: 30px auto;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #ffd6e5;
+}
+
+/* Add a small petal animation to the result container */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+.result-container::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 130px;
+  height: 130px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="white" d="M50,10 L50,90 M10,50 L90,50 M25,25 L75,75 M25,75 L75,25 M35,15 L65,85 M15,35 L85,65 M15,65 L85,35 M35,85 L65,15"/><circle fill="white" cx="50" cy="50" r="5"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0.8;
+  animation: float 4s ease-in-out infinite;
+}
+
+.result-container::after {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 120px;
+  height: 120px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="white" d="M50,10 L50,90 M10,50 L90,50 M25,25 L75,75 M25,75 L75,25 M35,15 L65,85 M15,35 L85,65 M15,65 L85,35 M35,85 L65,15"/><circle fill="white" cx="50" cy="50" r="5"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0.8;
+  animation: float 5s ease-in-out infinite reverse;
+}
+
+.result-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.result-header {
+  color: #ff6b9d;
+  margin-bottom: 25px;
+  font-size: 2em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.main-prediction {
+  background-color: #fff9fb;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  border: 3px solid #ffd6e5;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(255, 107, 157, 0.2);
+}
+
+.main-prediction::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 130px;
+  height: 130px;
+  background-image: url('https://img.freepik.com/free-vector/cute-flower-cartoon-icon-illustration_138676-2085.jpg?size=626&ext=jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
+.prediction-emoji {
+  font-size: 4em;
+  margin: 10px 0;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.main-prediction h3 {
+  font-size: 1.8em;
+  color: #ff6b9d;
+  margin: 15px 0;
+}
+
+.confidence-bar {
+  background-color: #f0f0f0;
+  height: 20px;
+  border-radius: 10px;
+  margin: 15px auto;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  transition: width 1s ease-in-out;
+  animation: fillBar 1s ease-out;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+}
+
+.confidence-text {
+  color: #7c5295;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.other-predictions {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 25px;
+}
+
+.other-predictions h4 {
+  color: #7c5295;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.prediction-item {
+  background-color: white;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+
+.prediction-item:hover {
+  transform: scale(1.02);
+}
+
+.prediction-class {
+  color: #7c5295;
+  flex-grow: 1;
+  margin: 0 15px;
+  text-align: left;
+}
+
+.object-definition {
+  margin: 30px 0;
+  background-color: #fff5f8;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.15);
+  position: relative;
+  overflow: hidden;
+  border: 2px dashed #ffd6e5;
+}
+
+.object-definition::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 70px;
+  height: 70px;
+  background-image: url('https://img.freepik.com/free-vector/cute-sun-flower-cartoon-icon-illustration_138676-2108.jpg?size=626&ext=jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+.object-definition h4 {
+  color: #ff6b9d;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.definition-content {
+  padding: 0 10px;
+}
+
+.definition-content p {
+  margin: 12px 0;
+  line-height: 1.5;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.fact-bullet {
+  color: #ff6b9d;
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+.prediction-confidence {
+  font-weight: bold;
+}
+
+.fun-fact {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #fff9fb;
+  border-radius: 15px;
+  color: #7c5295;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ffd6e5;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.15);
+}
+
+.fun-fact::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 60px;
+  height: 60px;
+  background-image: url('https://img.freepik.com/free-vector/cute-cat-playing-ball-cartoon-illustration_138676-2432.jpg?size=626&ext=jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  transform: rotate(10deg);
+  pointer-events: none;
+}
+
+.fun-fact p:first-child {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.try-again-button {
+  background-color: #ff6b9d;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255,107,157,0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.try-again-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.try-again-button:hover::before {
+  left: 100%;
+}
+
+.try-again-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255,107,157,0.4);
+}
+
+@media (max-width: 768px) {
+  .result-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .result-header {
+    font-size: 1.5em;
+  }
+
+  .prediction-emoji {
+    font-size: 3em;
+  }
+
+  .main-prediction h3 {
+    font-size: 1.4em;
+  }
+}
