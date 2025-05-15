@@ -1,7 +1,9 @@
-node_modules/ 
-__pycache__/ 
-myenv/ 
-.DS_Store 
-backup/data/cifar-10-python.tar.gz 
-backup/data/cifar-100-python.tar.gz 
-backup/data/cifar-100-python/train 
+node_modules/
+__pycache__/
+myenv/
+.DS_Store
+backup/data/cifar-10-python.tar.gz
+backup/data/cifar-100-python.tar.gz
+backup/data/cifar-100-python/train
+build/
+model.pth
