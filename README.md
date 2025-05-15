@@ -56,11 +56,11 @@ npm start
 ## Model Details
 
 - **Architecture**: EfficientNet B3 pre-trained on ImageNet
-- **Dataset**: Uses the ImageNet dataset with 1000 classes for transfer learning
+- **Dataset**: Uses classes inspired by CIFAR-100 but leverages ImageNet pre-trained weights
 - **Recognition**: 50+ different objects including animals, household items, people, and more
 - **Processing**: Real-time analysis with confidence scoring
 - **Face Detection**: Enhanced recognition of human faces
-- **Training**: The model leverages transfer learning from a pre-trained model rather than training from scratch
+- **Training**: The model uses transfer learning with custom class mapping from ImageNet to our target classes
 
 ## Usage
 
